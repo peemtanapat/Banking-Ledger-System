@@ -11,7 +11,7 @@ import jakarta.persistence.Enumerated;
 @Embeddable
 public class Money {
 
-    protected final static String INVALID_AMOUNT = "Invalid amount: must be greater than or equal zero";
+    public final static String INVALID_AMOUNT = "Invalid amount: must be greater than or equal zero";
 
     @Column(length = 3, nullable = false)
     @Enumerated(EnumType.STRING)

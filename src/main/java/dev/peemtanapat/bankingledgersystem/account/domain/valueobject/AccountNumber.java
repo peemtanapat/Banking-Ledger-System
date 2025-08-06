@@ -8,7 +8,7 @@ public class AccountNumber {
 
     protected final static String INVALID_ACC_NUM = "Invalid account number format: must be 10 length of digit";
 
-    @Column(name = "account_number", length = 10)
+    @Column(name = "account_number", unique = true, length = 10)
     private String value;
 
     protected AccountNumber() {

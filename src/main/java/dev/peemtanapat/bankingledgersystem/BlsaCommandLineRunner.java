@@ -9,8 +9,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class BlsaCommandLineRunner implements CommandLineRunner {
 
-    // private final AccountRepository accountRepository;
-
     @Override
     public void run(String... args) throws Exception {
     }

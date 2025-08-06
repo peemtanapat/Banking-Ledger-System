@@ -5,9 +5,12 @@ spring:
     name: BankingLedgerSystem
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/
-    username: postgres
+    url: jdbc:postgresql://localhost:5432/bls
+    username: admin
     password: admin
+  data:
+    jdbc:
+      dialect: postgresql
 
   jpa:
     hibernate:

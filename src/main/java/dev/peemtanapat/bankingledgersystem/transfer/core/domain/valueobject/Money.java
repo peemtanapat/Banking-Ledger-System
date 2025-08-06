@@ -1,4 +1,4 @@
-package dev.peemtanapat.bankingledgersystem.account.domain.valueobject;
+package dev.peemtanapat.bankingledgersystem.transfer.core.domain.valueobject;
 
 import java.math.BigDecimal;
 
@@ -17,7 +17,7 @@ public class Money {
     @Enumerated(EnumType.STRING)
     private Currency currency = Currency.THB;
 
-    @Column(name = "balance", nullable = false)
+    @Column(name = "amount", nullable = false)
     private BigDecimal amount;
 
     protected Money() {

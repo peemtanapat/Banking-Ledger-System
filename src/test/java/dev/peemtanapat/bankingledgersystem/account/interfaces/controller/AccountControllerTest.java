@@ -16,7 +16,6 @@ import org.springframework.test.web.servlet.MvcResult;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import dev.peemtanapat.bankingledgersystem.account.application.dto.AccountDto;
 import dev.peemtanapat.bankingledgersystem.account.domain.enums.AccountStatus;
 import dev.peemtanapat.bankingledgersystem.account.domain.enums.AccountType;
 import dev.peemtanapat.bankingledgersystem.account.domain.enums.Currency;
@@ -74,8 +73,8 @@ class AccountControllerTest {
                                         assert acc.getAccountNumber().getValue().length() == 10;
                                         assert acc.getAccountType().equals(AccountType.SAVINGS);
                                         assert acc.getAccountStatus().equals(AccountStatus.ACTIVE);
-                                        assert acc.getBalance().getAmount().equals(initialBalance);
-                                        assert acc.getBalance().getCurrency().equals(Currency.THB);
+                                        assert acc.getBalanceObj().getAmount().equals(initialBalance);
+                                        assert acc.getBalanceObj().getCurrency().equals(Currency.THB);
                                 }, () -> {
                                         throw new NoSuchElementException(
                                                         "Not found any account id=" + newAccount.accountId());

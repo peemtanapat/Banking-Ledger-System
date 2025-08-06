@@ -25,7 +25,7 @@ public class AccountDto {
                 .accountName(account.getAccountName())
                 .accountType(account.getAccountType())
                 .accountStatus(account.getAccountStatus())
-                .balance(account.getBalance())
+                .balance(account.getBalanceObj())
                 .build();
     }
 

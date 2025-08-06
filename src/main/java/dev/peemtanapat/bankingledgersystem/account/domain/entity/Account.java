@@ -1,7 +1,10 @@
 package dev.peemtanapat.bankingledgersystem.account.domain.entity;
 
+import java.math.BigDecimal;
+
 import dev.peemtanapat.bankingledgersystem.account.domain.enums.AccountStatus;
 import dev.peemtanapat.bankingledgersystem.account.domain.enums.AccountType;
+import dev.peemtanapat.bankingledgersystem.account.domain.enums.Currency;
 import dev.peemtanapat.bankingledgersystem.account.domain.valueobject.AccountName;
 import dev.peemtanapat.bankingledgersystem.account.domain.valueobject.AccountNumber;
 import dev.peemtanapat.bankingledgersystem.account.domain.valueobject.Money;
@@ -36,6 +39,13 @@ public class Account {
 
     @Embedded
     private Money balance;
+
+    public Account() {
+    }
+
+    public Account(long id) {
+        this.id = id;
+    }
 
     public boolean isOwnedBy(String customerId) {
         // TODO: check with the FK customerId
@@ -86,12 +96,28 @@ public class Account {
         this.accountType = accountType;
     }
 
-    public Money getBalance() {
+    public Money getBalanceObj() {
         return balance;
+    }
+
+    public BigDecimal getBalance() {
+        return balance.getAmount();
+    }
+
+    public Currency getCurrency() {
+        return balance.getCurrency();
     }
 
     public void setBalance(Money balance) {
         this.balance = balance;
+    }
+
+    public void setBalance(BigDecimal balance) {
+        this.balance = new Money(balance);
+    }
+
+    public void setBalance(String balance) {
+        this.balance = new Money(balance);
     }
 
 }
